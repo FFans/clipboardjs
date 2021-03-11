@@ -14,8 +14,9 @@ ffans-clipboardjs:
         copy_enable_label: '开启复制功能'
     forum:
       no_support: '不支持 :('
-      mac_msg: '按 ⌘-{actionKey} {action}'
-      pc_msg: '按 Ctrl-{actionKey} {action}'
-      copy_btn: '复制'
+      mac_msg: '按 {actionKey} {action}'
+      pc_msg: '按 {actionKey} {action}'
+      action_copy: '复制'
+      action_cut: '剪切'
       ok_btn: '复制成功'
       error_btn: '复制失败'
