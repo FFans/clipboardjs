@@ -18,5 +18,4 @@ ffans-clipboardjs:
       ok_btn: 'Coppied'
       error_btn: 'Error'
       no_support: 'No support'
-      mac_msg: 'Press {actionKey} to {action}'
-      pc_msg: 'Press {actionKey} to {action}'
+      msg: 'Press {actionKey} to {action}'

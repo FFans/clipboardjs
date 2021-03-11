@@ -18,5 +18,4 @@ ffans-clipboardjs:
       ok_btn: '复制成功'
       error_btn: '复制失败'
       no_support: '不支持 :('
-      mac_msg: '按 {actionKey} {action}'
-      pc_msg: '按 {actionKey} {action}'
+      msg: '按 {actionKey} {action}'

@@ -9,7 +9,7 @@ import { codeLang } from "./codeLang";
 
 app.initializers.add('ffans/clipboardjs', () => {
     var clipboard = null;
-    var theme_name, themeElements, btnChild, btnChildT, btnChildF;
+    var theme_name, btnChild, btnChildT, btnChildF;
 
     function getAtt(key) {
         return app.forum.attribute('ffans-clipboardjs.' + key);
@@ -19,19 +19,18 @@ app.initializers.add('ffans/clipboardjs', () => {
     }
 
     extend(CommentPost.prototype, 'oncreate', function () {
-        theme_name = getAtt('theme_name');
-        themeElements = getTheme(theme_name);
+        theme_name = (getAtt('theme_name') == '') ? 'default' : getAtt('theme_name');
 
         if (getAtt('is_copy_enable') == 1) {
-            btnChild = themeElements[0];
-            btnChildT = themeElements[1];
-            btnChildF = themeElements[2];
+            btnChild = getTheme(theme_name)[0];
+            btnChildT = getTheme(theme_name)[1];
+            btnChildF = getTheme(theme_name)[2];
 
             var pres = this.element.querySelectorAll('pre');
             [].forEach.call(pres, function (pre) {
                 if (pre.className.indexOf("copy-ready") == -1)
                     pre.insertAdjacentHTML('afterBegin',
-                        '<button class="clipboard ' + getAtt('theme_name') + '" data-clipboard-snippet="">' + btnChild + '</button>'
+                        '<button class="clipboard ' + theme_name + '" data-clipboard-snippet="">' + btnChild + '</button>'
                     );
                 pre.classList.add("copy-ready");
                 if (theme_name == 'lingcoder' || theme_name == 'csdn') {
@@ -39,8 +38,6 @@ app.initializers.add('ffans/clipboardjs', () => {
                 }
             });
         }
-    });
-    extend(CommentPost.prototype, 'headerItems', function () {
         if (getAtt('is_show_codeLang') == 1) {
             codeLang();
         }
@@ -90,17 +87,18 @@ app.initializers.add('ffans/clipboardjs', () => {
     function fallbackMessage(action) {
         var actionMsg = '';
         var actionKey = (action === 'cut' ? 'X' : 'C');
+        action = (action === 'copy') ? getTrans('action_copy') : getTrans('action_cut');
         if (/iPhone|iPad/i.test(navigator.userAgent)) {
-            actionMsg = app.translator.trans('ffans-clipboardjs.forum.no_support') + ' :(';
+            actionMsg = getTrans('no_support') + ' :(';
         } else if (/Mac/i.test(navigator.userAgent)) {
-            actionMsg = app.translator.trans('ffans-clipboardjs.forum.mac_msg', {
+            actionMsg = app.translator.trans('ffans-clipboardjs.forum.msg', {
                 actionKey: '⌘-' + actionKey,
-                action: (action === 'copy' ? app.translator.trans('ffans-clipboardjs.forum.action_copy') : app.translator.trans('ffans-clipboardjs.forum.action_cut')),
+                action: action,
             });
         } else {
-            actionMsg = app.translator.trans('ffans-clipboardjs.forum.pc_msg', {
+            actionMsg = app.translator.trans('ffans-clipboardjs.forum.msg', {
                 actionKey: 'Ctrl-' + actionKey,
-                action: (action === 'copy' ? app.translator.trans('ffans-clipboardjs.forum.action_copy') : app.translator.trans('ffans-clipboardjs.forum.action_cut')),
+                action: action,
             });
         }
         actionMsg = actionMsg.join("");
