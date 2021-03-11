@@ -11,12 +11,12 @@ export function getTheme(theme_name) {
             break;
         case 'lingcoder':
             
-            btnChild = '<span class="label">'+app.translator.trans('ffans-clipboardjs.forum.copy_btn')+'</span>';
+            btnChild = '<span class="label">'+app.translator.trans('ffans-clipboardjs.forum.action_copy')+'</span>';
             btnChildT = '<span class="success">'+app.translator.trans('ffans-clipboardjs.forum.ok_btn')+'</span>';
             btnChildF = '<span class="error">'+app.translator.trans('ffans-clipboardjs.forum.error_btn')+'</span>';
             break;
         case 'csdn':
-            btnChild = '<span class="label">'+app.translator.trans('ffans-clipboardjs.forum.copy_btn')+'</span>';
+            btnChild = '<span class="label">'+app.translator.trans('ffans-clipboardjs.forum.action_copy')+'</span>';
             btnChildT = '<span class="success">'+app.translator.trans('ffans-clipboardjs.forum.ok_btn')+'</span>';
             btnChildF = '<span class="error">'+app.translator.trans('ffans-clipboardjs.forum.error_btn')+'</span>';
             break;

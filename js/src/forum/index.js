@@ -15,7 +15,7 @@ app.initializers.add('ffans/clipboardjs', () => {
         return app.forum.attribute('ffans-clipboardjs.' + key);
     }
     function getTrans(key) {
-        return app.translator.trans('ffans-clipboardjs.admin.settings.' + key);
+        return app.translator.trans('ffans-clipboardjs.forum.' + key);
     }
 
     extend(CommentPost.prototype, 'oncreate', function () {
@@ -38,8 +38,6 @@ app.initializers.add('ffans/clipboardjs', () => {
                     pre.classList.add("sticky");
                 }
             });
-
-
         }
     });
     extend(CommentPost.prototype, 'headerItems', function () {

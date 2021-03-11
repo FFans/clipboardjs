@@ -1,8 +1,8 @@
 ffans-clipboardjs:
     admin:
       settings:
-        codeLang_label: 'Enable copy code'
-        copy_enable_label: 'Show code language'
+        codeLang_label: 'Show code language'
+        copy_enable_label: 'Enable copy code'
         themes_label: 'Style of the copy button'
         themes:
           cnblog: 'cnBlogs'
