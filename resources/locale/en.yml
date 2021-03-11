@@ -1,0 +1,21 @@
+ffans-clipboardjs:
+    admin:
+      settings:
+        themes_label: 'Style of the copy button'
+        themes:
+          default: 'Default Clipboardjs'
+          github: 'GitHub'
+          csdn: 'CSDN'
+          cnblog: 'cnBlogs'
+          jianshu: 'Jian Shu'
+          lingcoder: 'LingCoder'
+          segmentfault: 'SegmentFault'
+        codeLang_label: 'Enable copy code'
+        copy_enable_label: 'Show code language'
+    forum:
+      no_support: 'No support :('
+      mac_msg: 'Press ⌘-{actionKey} to {action}'
+      pc_msg: 'Press Ctrl-{actionKey} to {action}'
+      copy_btn: 'Copy'
+      ok_btn: 'Coppied'
+      error_btn: 'Error'
