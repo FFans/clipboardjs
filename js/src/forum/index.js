@@ -22,7 +22,6 @@ app.initializers.add('ffans/clipboardjs', () => {
         themeElements = getTheme(theme_name);
 
         if (getAtt('is_copy_enable') == 1) {
-            codeLang();
             btnChild = themeElements[0];
             btnChildT = themeElements[1];
             btnChildF = themeElements[2];
@@ -31,7 +30,7 @@ app.initializers.add('ffans/clipboardjs', () => {
             [].forEach.call(pres, function (pre) {
                 if (pre.className.indexOf("copy-ready") == -1)
                     pre.insertAdjacentHTML('afterBegin',
-                        '<button class="clipboard ' + getAtt('theme_name') + '" data-clipboard-snippet="">' + btnChild + '</button>'
+                        '<button class="clipboard ' + theme_name + '" data-clipboard-snippet="">' + btnChild + '</button>'
                     );
                 pre.classList.add("copy-ready");
                 if (theme_name == 'lingcoder' || theme_name == 'csdn') {
