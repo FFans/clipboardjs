@@ -23,7 +23,7 @@ export function codeLang() {
             if(pres[i].className.indexOf("language-") == -1){
                 try {
                     code_language = pres[i].getElementsByTagName('code').item(0).result.language;
-                    if(code_language != "properties" && code_language != undefined && code_language != ""){
+                    if(code_language != null && code_language != undefined && code_language != ""){
                         pres[i].classList.add("language-" + code_language);
                     }
                 } catch (error) {
