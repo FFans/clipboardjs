@@ -24,4 +24,8 @@ return [
     function (Dispatcher $dispatcher) {
         $dispatcher->subscribe(Listeners\SaveSettings::class);
     },
+    (new Extend\Settings())
+        ->serializeToForum('themeName', 'ffans-clipboardjs.theme_name')
+        ->serializeToForum('isCopyEnable', 'ffans-clipboardjs.is_copy_enable', 'boolVal')
+        ->serializeToForum('isShowCodeLang', 'ffans-clipboardjs.is_show_codeLang', 'boolVal'),
 ];

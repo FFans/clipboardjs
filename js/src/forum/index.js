@@ -1,32 +1,33 @@
-import { extend } from 'flarum/extend';
-import app from 'flarum/app';
+import { extend } from 'flarum/common/extend';
 
-import CommentPost from 'flarum/components/CommentPost';
+import CommentPost from 'flarum/forum/components/CommentPost';
 import ClipboardJS from 'clipboard';
 
 import { getTheme } from './getTheme';
 import { codeLang } from "./codeLang";
 
 app.initializers.add('ffans/clipboardjs', () => {
+
     var clipboard = null;
     var theme_name, btnChild, btnChildT, btnChildF;
 
     function getAtt(key) {
-        return app.forum.attribute('ffans-clipboardjs.' + key);
+        return app.forum.attribute(key);
     }
     function getTrans(key) {
         return app.translator.trans('ffans-clipboardjs.forum.' + key);
     }
 
     extend(CommentPost.prototype, 'oncreate', function () {
-        theme_name = (getAtt('theme_name') == '') ? 'default' : getAtt('theme_name');
+        theme_name = (getAtt('themeName') == '') ? 'default' : getAtt('themeName');
 
-        if (getAtt('is_copy_enable') == 1) {
+        if (getAtt('isCopyEnable') == 1) {
             btnChild = getTheme(theme_name)[0];
             btnChildT = getTheme(theme_name)[1];
             btnChildF = getTheme(theme_name)[2];
 
             var pres = this.element.querySelectorAll('pre');
+            console.log('获取 pre' + pres);
             [].forEach.call(pres, function (pre) {
                 if (pre.className.indexOf("copy-ready") == -1)
                     pre.insertAdjacentHTML('afterBegin',
@@ -38,7 +39,7 @@ app.initializers.add('ffans/clipboardjs', () => {
                 }
             });
         }
-        if (getAtt('is_show_codeLang') == 1) {
+        if (getAtt('isShowCodeLang') == 1) {
             codeLang();
         }
     });

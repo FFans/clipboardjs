@@ -1,4 +1,4 @@
-import app from 'flarum/app';
+import app from 'flarum/common/app';
 
 app.initializers.add('ffans/clipboardjs', (app) => {
 
@@ -26,12 +26,12 @@ app.initializers.add('ffans/clipboardjs', (app) => {
     })
     .registerSetting({
       setting: 'ffans-clipboardjs.is_copy_enable',
-      type: 'boolean',
+      type: 'switch',
       label: getTrans('copy_enable_label')
     })
     .registerSetting({
       setting: 'ffans-clipboardjs.is_show_codeLang',
-      type: 'boolean',
+      type: 'switch',
       label: getTrans('codeLang_label')
     })
   console.log('[ffans/clipboardjs] Hello, admin!');

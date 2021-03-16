@@ -1,4 +1,4 @@
-import app from 'flarum/app';
+import app from 'flarum/common/app';
 
 export function getTheme(theme_name) {
     var btnChild, btnChildT, btnChildF;
@@ -10,7 +10,6 @@ export function getTheme(theme_name) {
             btnChildF = '<svg aria-hidden="true" role="img" class="clipboard-icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom;"><path fill-rule="evenodd" d="M 3.72 3.72 a 0.75 0.75 0 0 1 1.06 0 L 8 6.94 l 3.22 -3.22 a 0.75 0.75 0 1 1 1.06 1.06 L 9.06 8 l 3.22 3.22 a 0.75 0.75 0 1 1 -1.06 1.06 L 8 9.06 l -3.22 3.22 a 0.75 0.75 0 0 1 -1.06 -1.06 L 6.94 8 L 3.72 4.78 a 0.75 0.75 0 0 1 0 -1.06 Z"></path></svg>';
             break;
         case 'lingcoder':
-            
             btnChild = '<span class="label">'+app.translator.trans('ffans-clipboardjs.forum.action_copy')+'</span>';
             btnChildT = '<span class="success">'+app.translator.trans('ffans-clipboardjs.forum.ok_btn')+'</span>';
             btnChildF = '<span class="error">'+app.translator.trans('ffans-clipboardjs.forum.error_btn')+'</span>';
