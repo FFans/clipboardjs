@@ -24,5 +24,5 @@ composer update ffans/clipboardjs
 ### Links
 
 - [Packagist](https://packagist.org/packages/ffans/clipboardjs)
-- [Discussion](https://discuss.flarum.org/d/26408)
+- [Discussion](https://discuss.flarum.org/d/26415)
 - [GitHub](https://github.com/ffans/clipboardjs)
