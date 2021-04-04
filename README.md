@@ -9,7 +9,7 @@ Supports 47 common languages by default:
 
 ### Installation
 
-Use [Bazaar](https://discuss.flarum.org/d/5151-flagrow-bazaar-the-extension-marketplace) or install manually with composer:
+Install manually with composer:
 
 ```sh
 composer require ffans/clipboardjs
